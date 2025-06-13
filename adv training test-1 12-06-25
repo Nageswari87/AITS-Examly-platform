@@ -1,0 +1,39 @@
+#1.Swap elements by index
+li=list(map(int,input().split()))
+ind1=int(input("Enter index 1"))
+ind2=int(input("Enter index 2"))
+temp=li[ind1]
+li[ind1]=li[ind2]
+li[ind2]=temp
+print(li)
+
+#2.Count number of digits in a string
+n=int(input())
+c=0
+for i in range(n):
+    m=i+1
+    s=input()
+    for i in s:
+        if i.isdigit():
+            c+=1
+print(c)
+#3.Generate first n prime numbers and display using a dictionary
+def is_prime(n):
+    if n<2:
+        return False
+    for i in range(2,int(n**0.5)+1):
+        if n%i==0:
+            return False
+    return True
+def seq(num):
+    dictt={}
+    ind=0
+    n=2
+    while len(dictt)<num:
+        if is_prime(n):
+            dictt[ind]=n
+            ind+=1
+        n+=1
+    print(dictt)
+num=int(input("Enter number of prime numbers to generate:"))
+seq(num)
